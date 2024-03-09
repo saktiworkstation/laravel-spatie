@@ -34,6 +34,6 @@ Route::get('admin', function () {
 
 Route::get('penulis', function () {
     return '<h1>Hello Penulis</h1>';
-})->middleware(['auth', 'verified', 'role:penulis']);
+})->middleware(['auth', 'verified', 'role:penulis|admin']);
 
 require __DIR__.'/auth.php';
