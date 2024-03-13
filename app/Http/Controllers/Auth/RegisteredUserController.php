@@ -42,6 +42,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->givePermissionTo('lihat-tulisan');
+
         event(new Registered($user));
 
         Auth::login($user);
