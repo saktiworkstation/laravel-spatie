@@ -38,6 +38,6 @@ Route::get('penulis', function () {
 
 Route::get('tulisan', function () {
     return '<h1>Sederhanya Tulisan</h1>';
-})->middleware(['auth', 'verified', 'permission:lihat-tulisan']);
+})->middleware(['auth', 'verified', 'role_or_permission:lihat-tulisan|admin']);
 
 require __DIR__.'/auth.php';
